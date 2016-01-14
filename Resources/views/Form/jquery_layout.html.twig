@@ -365,7 +365,7 @@
 {% block genemu_jquerygeolocation_javascript %}
 {% spaceless %}
     {# Elements generation #}
-    {% if map is sameas(true) %}
+    {% if map is same as(true) %}
         {% set elements = elements|merge({"map": "#" ~ id ~ "_map"}) %}
     {% endif %}
 
@@ -396,7 +396,7 @@
 
             $field.addresspicker({{ configs|json_encode|raw }});
 
-            {% if map is sameas(true) %}
+            {% if map is same as(true) %}
                 var gmarker = $field.addresspicker('marker');
                 gmarker.setVisible(true);
 
@@ -451,7 +451,7 @@
             }
         });
 
-    {% if configs.auto is not defined or configs.auto is sameas(false) %}
+    {% if configs.auto is not defined or configs.auto is same as(false) %}
         $configs.onAllComplete = function(event, data) {
             $form.submit();
         };
